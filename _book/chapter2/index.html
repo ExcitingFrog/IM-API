@@ -200,7 +200,111 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="manager">Manager</h1>
+<blockquote>
 <p>&#x4F01;&#x4E1A;&#x7BA1;&#x7406;&#x5458;&#x63A5;&#x53E3;</p>
+</blockquote>
+<hr>
+<h3 id="post-sign-up"><button style="background-color: rgb(38, 203, 124);width:80px;height:30px;border-radius:7px;font-size:15px;color:white">POST</button> Sign Up</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>managers/sign_up</b></pre>
+
+<p>&#x6CE8;&#x518C;&#x7BA1;&#x7406;&#x5458;&#x8D26;&#x53F7;&#xFF0C;&#x4F20;&#x5165;&#x90AE;&#x7BB1;&#xFF0C;&#x5BC6;&#x7801;&#xFF0C;&#x8D26;&#x53F7;&#x540D;&#x3002; </p>
+<p>&#x65E2;&#x662F;&#x7F51;&#x7AD9;&#x8D26;&#x53F7;&#x5BC6;&#x7801; &#x4E5F;&#x662F;&#x5BA2;&#x670D;&#x7CFB;&#x7EDF;&#x7684;&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#x3002; </p>
+<p>&#x540C;&#x65F6;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x804A;&#x5929;&#x5BA4;&#x9891;&#x9053;&#xFF0C;&#x540D;&#x5B57;&#x662F;&#x7BA1;&#x7406;&#x5458;id&#xFF0C;&#x4F5C;&#x4E3A;&#x7BA1;&#x7406;&#x5BA2;&#x670D;&#x7684;&#x9891;&#x9053;&#x3002;</p>
+<hr>
+<h3 id="post-sign-in"><button style="background-color: rgb(38, 203, 124);width:80px;height:30px;border-radius:7px;font-size:15px;color:white">POST</button> Sign In</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>managers/sign_in</b></pre>
+
+<p> &#x7BA1;&#x7406;&#x5458;&#x767B;&#x5F55;&#x7F51;&#x9875;</p>
+<hr>
+<h3 id="post-change-password"><button style="background-color: rgb(38, 203, 124);width:80px;height:30px;border-radius:7px;font-size:15px;color:white">POST</button> Change Password</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>managers/change_password</b></pre>
+
+<p> &#x4FEE;&#x6539;&#x4E2A;&#x4EBA;&#x5BC6;&#x7801;</p>
+<hr>
+<h3 id="get-keys"><button style="background-color: rgb(56, 132, 255);width:80px;height:30px;border-radius:7px;font-size:17px;color:white">GET</button> Keys</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>/managers/keys</b></pre>
+
+<p>&#x7BA1;&#x7406;&#x5458;&#x83B7;&#x53D6;apikey&#x4E0E;secretKey &#x9700;&#x8981;&#x7BA1;&#x7406;&#x5458;&#x767B;&#x5F55;&#x65F6;&#x7684;token  </p>
+<p>apikey&#x5C31;&#x662F;&#x7BA1;&#x7406;&#x5458;id  secretKey&#x662F;&#x968F;&#x673A;&#x751F;&#x6210;&#x7684;32&#x4F4D;&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x6CA1;&#x6709;&#x65F6;&#x95F4;&#x9650;&#x5236;&#xFF09;&#x91CD;&#x65B0;&#x8BF7;&#x6C42;&#x4F1A;&#x751F;&#x6210;&#x65B0;&#x7684;</p>
+<hr>
+<h3 id="get-access-token"><button style="background-color: rgb(56, 132, 255);width:80px;height:30px;border-radius:7px;font-size:17px;color:white">GET</button> Access token</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>/managers/access_token</b></pre>
+
+<p>&#x901A;&#x8FC7;apikey&#x4E0E;appsecret&#x83B7;&#x53D6;token&#xFF0C;&#x8FD9;&#x4E2A;token&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5728;customer&#x7684;&#x63A5;&#x53E3;&#x4E2D; </p>
+<p>&#x7B7E;&#x540D;&#x751F;&#x6210;&#x65B9;&#x6CD5;(hmac sha256)&#x6837;&#x4F8B;&#xFF1A; </p>
+<p>go: </p>
+<p>sha256 := sha256.New  </p>
+<p>hash := hmac.New(sha256, []byte(secretKey)) </p>
+<p>hash.Write([]byte(apiKey)) </p>
+<p>return base64.StdEncoding.EncodeToString(hash.Sum(nil))</p>
+<p>js: </p>
+<p>var hash = CryptoJS.HmacSHA256(&quot;8009bf1c5fea4221b19afd4278fcb06f&quot;,</p>
+<p> &quot;3WsQAyIVHG7mQAHwURktAkLPMy622Has&quot;); </p>
+<p>var hashInBase64 = CryptoJS.enc.Base64.stringify(hash); </p>
+<p>document.getElementById(&apos;output&apos;).innerHTML = hashInBase64;</p>
+<hr>
+<h3 id="post-create-agent"><button style="background-color: rgb(38, 203, 124);width:80px;height:30px;border-radius:7px;font-size:15px;color:white">POST</button> Create Agent</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>/managers/access_token</b></pre>
+
+<p>&#x7BA1;&#x7406;&#x5458;&#x6CE8;&#x518C;&#x5BA2;&#x670D;&#x8D26;&#x53F7;  </p>
+<p>&#x5BA2;&#x670D;&#x4F1A;&#x52A0;&#x5165;&#x5927;&#x7684;&#x7BA1;&#x7406;&#x5458;&#x521B;&#x5EFA;&#x65F6;&#x7684;&#x9891;&#x9053; &#x548C; &#x5176;&#x6240;&#x5728;&#x90E8;&#x95E8;&#x7684;&#x90E8;&#x95E8;&#x9891;&#x9053;</p>
+<hr>
+<h3 id="get-query-agents"><button style="background-color: rgb(56, 132, 255);width:80px;height:30px;border-radius:7px;font-size:17px;color:white">GET</button> Query Agents</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>/managers/agents</b></pre>
+
+<p>&#x67E5;&#x627E;&#x6240;&#x6709;&#x5BA2;&#x670D;</p>
+<hr>
+<h3 id="get-show-departments"><button style="background-color: rgb(56, 132, 255);width:80px;height:30px;border-radius:7px;font-size:17px;color:white">GET</button> Show Departments</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>/managers/departments</b></pre>
+
+<p> &#x67E5;&#x770B;&#x7BA1;&#x7406;&#x5458;&#x521B;&#x5EFA;&#x7684;&#x6240;&#x6709;&#x90E8;&#x95E8;</p>
+<hr>
+<h3 id="post-create-department"><button style="background-color: rgb(38, 203, 124);width:80px;height:30px;border-radius:7px;font-size:15px;color:white">POST</button> Create Department</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>/managers/departments</b></pre>
+
+<p> &#x7BA1;&#x7406;&#x5458;&#x521B;&#x5EFA;&#x90E8;&#x95E8;  </p>
+<p>&#x540C;&#x65F6;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;channel &#x540D;&#x5B57;&#x662F;&#x201C;${managerid}AND${departid}&#x201D;</p>
+<hr>
+<h3 id="put-update-department"><button style="background-color: rgb(247, 125, 5);width:80px;height:30px;border-radius:7px;font-size:15px;color:white">PUT</button> Update Department</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>/managers/departments</b></pre>
+
+<p> &#x66F4;&#x65B0;&#x90E8;&#x95E8;&#x540D;&#x5B57;  </p>
+<hr>
+<h3 id="delete-delete-department"><button style="background-color: rgb(255, 70, 66);width:80px;height:30px;border-radius:7px;font-size:15px;color:white">DELETE</button> Delete Department</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/departments/</span><b>managers/templates</b></pre>
+
+<p>&#x5220;&#x9664;&#x6A21;&#x7248;.     </p>
+<hr>
+<h3 id="post-change-agent-password"><button style="background-color: rgb(38, 203, 124);width:80px;height:30px;border-radius:7px;font-size:15px;color:white">POST</button> Change Agent Password</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>managers/agents/change_password</b></pre>
+
+<hr>
+<h3 id="post-change-agent-department"><button style="background-color: rgb(38, 203, 124);width:80px;height:30px;border-radius:7px;font-size:15px;color:white">POST</button> Change Agent Department</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>managers/agents/change_department</b></pre>
+
+<p> &#x66F4;&#x6539;&#x5BA2;&#x670D;&#x7684;&#x90E8;&#x95E8;  </p>
+<p>&#x5BA2;&#x670D;&#x4F1A;&#x4ECE;&#x6240;&#x5728;&#x7684;channel&#x79FB;&#x5230;&#x53E6;&#x4E00;&#x4E2A;channel</p>
+<hr>
+<h3 id="post-create-template"><button style="background-color: rgb(38, 203, 124);width:80px;height:30px;border-radius:7px;font-size:15px;color:white">POST</button> Create Template</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>managers/templates</b></pre>
+
+<hr>
+<h3 id="put-update-template"><button style="background-color: rgb(247, 125, 5);width:80px;height:30px;border-radius:7px;font-size:15px;color:white">PUT</button> Update Template</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/departments/</span><b>managers/templates</b></pre>
+
+<p>&#x66F4;&#x65B0;&#x6A21;&#x7248;&#x4FE1;&#x606F; </p>
+<hr>
+<h3 id="delete-delete-template"><button style="background-color: rgb(255, 70, 66);width:80px;height:30px;border-radius:7px;font-size:15px;color:white">DELETE</button> Delete Template</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/departments/</span><b>managers/departments</b></pre>
+
+<p> &#x5220;&#x9664;&#x90E8;&#x95E8; &#x540C;&#x65F6;&#x5220;&#x9664;&#x90E8;&#x95E8;channel  </p>
+<hr>
+<h3 id="get-query-template"><button style="background-color: rgb(56, 132, 255);width:80px;height:30px;border-radius:7px;font-size:17px;color:white">GET</button> Query Template</h3>
+<pre><span style="color:grey">https://api.chatsdk.io/departments/</span><b>managers/templates</b></pre>
+
+<p>&#x67E5;&#x8BE2;&#x6A21;&#x7248;&#x4FE1;&#x606F;  </p>
+<hr>
+<h3 id=""> </h3>
 
                                 
                                 </section>
@@ -244,7 +348,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chapter2","level":"1.3","depth":1,"next":{"title":"Chapter3","level":"1.4","depth":1,"path":"chapter3/README.md","ref":"chapter3/README.md","articles":[]},"previous":{"title":"Chapter1","level":"1.2","depth":1,"path":"chapter1/README.md","ref":"chapter1/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2/README.md","mtime":"2020-09-29T03:37:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-29T04:34:12.162Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Chapter2","level":"1.3","depth":1,"next":{"title":"Chapter3","level":"1.4","depth":1,"path":"chapter3/README.md","ref":"chapter3/README.md","articles":[]},"previous":{"title":"Chapter1","level":"1.2","depth":1,"path":"chapter1/README.md","ref":"chapter1/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2/README.md","mtime":"2020-09-29T10:17:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-29T10:19:14.293Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
