@@ -3,7 +3,7 @@
 
 ---
 
-### <button style="background-color: rgb(38, 203, 124);width:80px;height:30px;border-radius:7px;font-size:15px;color:white" >POST</button> Sign Up
+###<div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white" >POST</button> Sign Up </div>
 
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>managers/sign_up</b></pre>
 
