@@ -13,12 +13,6 @@
 
 同时创建一个聊天室频道，名字是管理员id，作为管理客服的频道
 
-<style>
-td,th,tr {
- border-style : hidden!important;
- text-align:left;
- }
-</style>
 #### Request
 <div>
 <pre>
@@ -657,10 +651,12 @@ Headers
     <tr><th>参数</th><th>类型</th><th>说明</th></tr>
     <tr><th>Authorization</th><td>string</td><td>管理员登录获取的token</td></tr>
   </table>
-Query Parameters
+Form Data Parameters
   <table>
     <tr><th>参数</th><th>类型</th><th>说明</th></tr>
     <tr><th>manager_id</th><td>string</td><td>管理员的id</td></tr>
+    <tr><th>tag</th><td>string</td><td>template tag</td></tr>
+    <tr><th>department_id</th><td>string</td><td>template id</td></tr>
   </table>
   </pre>
 </div>
@@ -829,5 +825,10 @@ Headers
 
 ---
 
-### 
+<style>
+td,th,tr {
+ border-style : hidden!important;
+ text-align:left;
+ }
+</style>
 

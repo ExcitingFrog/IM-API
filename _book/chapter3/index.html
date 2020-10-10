@@ -208,9 +208,71 @@
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>agents/sign_in</b></pre>
 
 <p>This endpoint allows you to get free cakes.</p>
+<h4 id="request">Request</h4>
+<div>
+<pre>
+Form Data Parameters
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>email</th><td>string</td><td>&#x90AE;&#x7BB1;</td></tr>
+    <tr><th>password</th><td>string</td><td>&#x5BC6;&#x7801;</td></tr>
+  </table>
+  </pre>
+</div>
+
+<h4 id="response">Response</h4>
+<div>
+<pre>
+  &#x6210;&#x529F;:
+  200 OK
+  {
+    &quot;agent&quot;: {
+        &quot;id&quot;: &quot;bfe28993-1023-4322-8cc7-1419e1524164&quot;,
+        &quot;created_at&quot;: &quot;2020-09-22T09:02:26.313433+08:00&quot;,
+        &quot;updated_at&quot;: &quot;2020-09-22T09:02:26.313433+08:00&quot;,
+        &quot;manager_id&quot;: &quot;8427ed6a-0376-4272-9039-b71600ebb99c&quot;,
+        &quot;nickname&quot;: &quot;a2&quot;,
+        &quot;email&quot;: &quot;a2@ruilisi.co&quot;,
+        &quot;rc_id&quot;: &quot;gMMDnqdZmHpeAjGXb&quot;,
+        &quot;rc_name&quot;: &quot;a2xpFbOg&quot;,
+        &quot;rc_email&quot;: &quot;YqfPdJa2@ruilisi.co&quot;,
+        &quot;EncryptedPassword&quot;: &quot;$2a$10$iwptFOgJc3YgjZvTzeGfjO7MlBStVepXl8Gymxoa.tOXiAQkLG1km&quot;,
+        &quot;departments&quot;: [
+            &quot;0a17b060-f6ed-43e1-a55f-5c4a6ec1e16b&quot;
+        ]
+    },
+    &quot;status&quot;: &quot;success&quot;
+  }
+</pre>
+</div>
+
 <hr>
 <h3 id="post-change-password-"><div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white">POST</button> Change Password </div></h3>
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>agents/change_password</b></pre>
+
+<h4 id="request">Request</h4>
+<div>
+<pre>
+Form Data Parameters
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>agent_id</th><td>string</td><td>agent id</td></tr>
+    <tr><th>password</th><td>string</td><td>&#x5BC6;&#x7801;</td></tr>
+  </table>
+  </pre>
+</div>
+
+<h4 id="response">Response</h4>
+<div>
+<pre>
+  &#x6210;&#x529F;:
+  200 OK
+  &#x8FD4;&#x56DE;:
+  {
+    &quot;status&quot;: &quot;success&quot;
+  }
+</pre>
+</div>
 
 <hr>
 <h3 id="post-history-message"><div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white">POST</button> History Message</div></h3>
@@ -220,17 +282,190 @@
 <h3 id="get-query-template-"><div> <button style="background-color: rgb(56, 132, 255);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white">GET</button> Query Template </div></h3>
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>agents/templates</b></pre>
 
+<h4 id="request">Request</h4>
+<div>
+<pre>
+Headers
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>Authorization</th><td>string</td><td>agent&#x767B;&#x5F55;&#x83B7;&#x53D6;&#x7684;token</td></tr>
+  </table>
+Query Parameters 
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>tag</th><td>string</td><td>template tag</td></tr>
+    <tr><th>department_id</th><td>string</td><td>template id</td></tr>
+  </table>
+</pre>
+</div>
+
+<h4 id="response">Response</h4>
+<div>
+<pre>
+  &#x6210;&#x529F;:
+  200 OK
+  &#x8FD4;&#x56DE;:
+  {
+    &quot;result&quot;: [
+        {
+            &quot;id&quot;: &quot;5b62c499-6f20-4f53-9118-e7607a2bd198&quot;,
+            &quot;created_at&quot;: &quot;2020-10-10T14:13:13.024172+08:00&quot;,
+            &quot;updated_at&quot;: &quot;2020-10-10T14:13:13.024172+08:00&quot;,
+            &quot;manager_id&quot;: &quot;8427ed6a-0376-4272-9039-b71600ebb99c&quot;,
+            &quot;department_id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+            &quot;text&quot;: &quot;text&quot;,
+            &quot;tag&quot;: &quot;tag&quot;
+        }
+    ],
+    &quot;status&quot;: &quot;success&quot;
+  }
+</pre>
+</div>
+
 <hr>
 <h3 id="post-create-template"><div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white">POST</button> Create Template</div></h3>
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>agents/templates</b></pre>
 
+<h4 id="request">Request</h4>
+<div>
+<pre>
+Headers
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>Authorization</th><td>string</td><td>agent&#x767B;&#x5F55;&#x83B7;&#x53D6;&#x7684;token</td></tr>
+  </table>
+Form Data Parameters 
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>manager_id</th><td>string</td><td>manager id</td></tr>
+    <tr><th>tag</th><td>string</td><td>template tag</td></tr>
+    <tr><th>department_id</th><td>string</td><td>template id</td></tr>
+  </table>
+</pre>
+</div>
+
+<h4 id="response">Response</h4>
+<div>
+<pre>
+  &#x6210;&#x529F;:
+  200 OK
+  &#x8FD4;&#x56DE;:
+  {
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;template&quot;: {
+        &quot;id&quot;: &quot;28310ee9-d0df-4b3c-b570-07fe248963eb&quot;,
+        &quot;created_at&quot;: &quot;2020-10-10T15:31:48.581911397+08:00&quot;,
+        &quot;updated_at&quot;: &quot;2020-10-10T15:31:48.581911397+08:00&quot;,
+        &quot;manager_id&quot;: &quot;8427ed6a-0376-4272-9039-b71600ebb99c&quot;,
+        &quot;department_id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+        &quot;text&quot;: &quot;&quot;,
+        &quot;tag&quot;: &quot;&quot;
+    }
+  }
+</pre>
+</div>
+
 <hr>
 <h3 id="post-post-message"><div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white">POST</button> Post Message</div></h3>
+<h4 id="request">Request</h4>
+<div>
+<pre>
+Headers
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>Authorization</th><td>string</td><td>agent&#x767B;&#x5F55;&#x83B7;&#x53D6;&#x7684;token</td></tr>
+  </table>
+Form Data Parameters 
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>roomId</th><td>string</td><td>group id</td></tr>
+    <tr><th>text</th><td>string</td><td>message</td></tr>
+  </table>
+</pre>
+</div>
+
+<h4 id="response">Response</h4>
+<div>
+<pre>
+  &#x6210;&#x529F;:
+  200 OK
+  &#x8FD4;&#x56DE;:
+  {
+    &quot;msg&quot;: {
+        &quot;success&quot;: true,
+        &quot;error&quot;: &quot;&quot;,
+        &quot;status&quot;: &quot;&quot;,
+        &quot;message&quot;: {
+            &quot;_id&quot;: &quot;EzvWbriNb6JTCET3B&quot;,
+            &quot;rid&quot;: &quot;2npDFBKwJLuPYen3F&quot;,
+            &quot;msg&quot;: &quot;msg&quot;,
+            &quot;ts&quot;: &quot;2020-10-10T08:02:04.949Z&quot;,
+            &quot;_updatedAt&quot;: &quot;2020-10-10T08:02:05.019Z&quot;,
+            &quot;u&quot;: {
+                &quot;_id&quot;: &quot;gMMDnqdZmHpeAjGXb&quot;,
+                &quot;name&quot;: &quot;a2&quot;,
+                &quot;username&quot;: &quot;a2xpFbOg&quot;,
+                &quot;status&quot;: &quot;&quot;,
+                &quot;token&quot;: &quot;&quot;,
+                &quot;tokenExpires&quot;: 0
+            },
+            &quot;parseUrls&quot;: true
+        }
+    },
+    &quot;status&quot;: &quot;success&quot;
+  }
+</pre>
+</div>
+
 <hr>
 <h3 id="post-send-template"><div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white">POST</button> Send Template</div></h3>
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>agents/send_template</b></pre>
 
+<h4 id="request">Request</h4>
+<div>
+<pre>
+Headers
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>Authorization</th><td>string</td><td>agent&#x767B;&#x5F55;&#x83B7;&#x53D6;&#x7684;token</td></tr>
+  </table>
+Form Data Parameters 
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>template_id</th><td>string</td><td>template id</td></tr>
+  </table>
+</pre>
+</div>
+
+<h4 id="response">Response</h4>
+<div>
+<pre>
+  &#x6210;&#x529F;:
+  200 OK
+  &#x8FD4;&#x56DE;:
+  {
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;template&quot;: {
+        &quot;id&quot;: &quot;28310ee9-d0df-4b3c-b570-07fe248963eb&quot;,
+        &quot;created_at&quot;: &quot;2020-10-10T15:31:48.581911+08:00&quot;,
+        &quot;updated_at&quot;: &quot;2020-10-10T15:31:48.581911+08:00&quot;,
+        &quot;manager_id&quot;: &quot;8427ed6a-0376-4272-9039-b71600ebb99c&quot;,
+        &quot;department_id&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+        &quot;text&quot;: &quot;&quot;,
+        &quot;tag&quot;: &quot;&quot;
+    }
+  }
+</pre>
+</div>
+
 <hr>
+<style>
+td,th,tr {
+ border-style : hidden!important;
+ text-align:left;
+ }
+</style>
+
 
                                 
                                 </section>
@@ -274,7 +509,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Agent","level":"1.4","depth":1,"next":{"title":"Customer","level":"1.5","depth":1,"path":"chapter4/README.md","ref":"chapter4/README.md","articles":[]},"previous":{"title":"Manager","level":"1.3","depth":1,"path":"chapter2/README.md","ref":"chapter2/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter3/README.md","mtime":"2020-10-10T00:54:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-10T06:35:00.208Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Agent","level":"1.4","depth":1,"next":{"title":"Customer","level":"1.5","depth":1,"path":"chapter4/README.md","ref":"chapter4/README.md","articles":[]},"previous":{"title":"Manager","level":"1.3","depth":1,"path":"chapter2/README.md","ref":"chapter2/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter3/README.md","mtime":"2020-10-10T08:07:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-10T08:05:20.892Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
