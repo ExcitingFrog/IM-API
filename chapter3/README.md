@@ -7,7 +7,7 @@
 
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>agents/sign_in</b></pre>
 
-This endpoint allows you to get free cakes.
+ sign in
 
 #### Request
 <div>

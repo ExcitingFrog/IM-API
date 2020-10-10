@@ -206,28 +206,246 @@
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>customers/auth_ping</b></pre>
 
 <p>verify access_token</p>
+<h4 id="request">Request</h4>
+<div>
+<pre>
+Headers
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>Authorization</th><td>string</td><td>access_token from admin api</td></tr>
+  </table>
+</pre>
+</div>
+
+<h4 id="response">Response</h4>
+<div>
+<pre>
+  &#x6210;&#x529F;:
+  200 OK
+  &#x8FD4;&#x56DE;:
+  &quot;pong&quot;
+</pre>
+</div>
+
 <hr>
 <h3 id="post-connect"><div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white">POST</button> Connect</div></h3>
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>customers/connect</b></pre>
 
 <p> &#x4F7F;&#x7528;&#x540E; &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BA2;&#x670D;&#x7CFB;&#x7EDF;&#x4E0B;&#x7684;&#x5BA2;&#x6237;&#x8D26;&#x53F7; &#x8FDE;&#x63A5;&#x4F01;&#x4E1A;&#x5BA2;&#x670D; &#x4F18;&#x5148;&#x968F;&#x673A;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5728;&#x7EBF;&#x5BA2;&#x670D;&#x8FDE;&#x63A5;  </p>
+<h4 id="request">Request</h4>
+<div>
+<pre>
+Headers
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>Authorization</th><td>string</td><td>access_token from admin api</td></tr>
+  </table>
+Form Data Parameters 
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>name</th><td>string</td><td>&#x540D;&#x5B57;&#x52A0;&#x7BA1;&#x7406;&#x5458;id&#x4F5C;&#x4E3A;&#x5BA2;&#x6237;&#x8D26;&#x53F7; &#x5BC6;&#x7801;&#x9ED8;&#x8BA4;HelloWorld1@#</td></tr>
+  </table>
+</pre>
+</div>
+
+<h4 id="response">Response</h4>
+<div>
+<pre>
+  &#x6210;&#x529F;:
+  200 OK
+  rid&#x662F;&#x623F;&#x95F4;&#x53F7;  
+  username&#x662F;&#x8D26;&#x6237;&#x540D;  
+  token&#x662F;&#x5BA2;&#x670D;&#x7CFB;&#x7EDF;&#x7684;token   
+  &#x8FD4;&#x56DE;:
+  {
+    &quot;base&quot;: &quot;https://chat.esheeps.com&quot;,
+    &quot;config&quot;: {},
+    &quot;im&quot;: {
+        &quot;_id&quot;: &quot;XetrKGqEZcNzxTRW8&quot;,
+        &quot;type&quot;: &quot;user&quot;,
+        &quot;status&quot;: &quot;offline&quot;,
+        &quot;active&quot;: true,
+        &quot;name&quot;: &quot;suzhouxiaofangshuan&quot;,
+        &quot;utcOffset&quot;: 0,
+        &quot;username&quot;: &quot;suzhouxiaofangshuan8009bf1c-5fea-4221-b19a-fd4278fcb06f&quot;
+    },
+    &quot;rid&quot;: &quot;JR945hGSmuAuY6NnmXetrKGqEZcNzxTRW8&quot;,
+    &quot;token&quot;: &quot;qoCA9uHhlkGrSBBXtiTIZAVIGQ2OaMNJ1zlYAQVlsRl&quot;
+  }
+</pre>
+
+<pre>
+  &#x5931;&#x8D25;:
+  400 Bad Request
+  &#x6570;&#x636E;&#x4F20;&#x8F93;&#x9519;&#x8BEF;
+  &#x8FD4;&#x56DE;:
+  {&quot;status&quot;: &quot;params invalid&quot;}
+</pre>
+
+<pre>
+  &#x5931;&#x8D25;:
+  401 Unauthorized
+  token&#x9519;&#x8BEF;
+  &#x8FD4;&#x56DE;:
+  {&quot;status&quot;: &quot;unauthorized&quot;}
+</pre>
+</div>
+
 <hr>
 <h3 id="get-history-messages-"><div> <button style="background-color: rgb(56, 132, 255);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white">GET</button> History Messages </div></h3>
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>customers/history_message</b></pre>
 
 <p> &#x5BA2;&#x6237;&#x67E5;&#x770B;&#x5BA2;&#x670D;&#x804A;&#x5929;&#x7684;&#x5386;&#x53F2;&#x8BB0;&#x5F55;</p>
+<h4 id="request">Request</h4>
+<div>
+<pre>
+Headers
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>Authorization</th><td>string</td><td>token</td></tr>
+  </table>
+Form Data Parameters 
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>room_id</th><td>string</td><td>group id</td></tr>
+  </table>
+</pre>
+</div>
+
+<h4 id="response">Response</h4>
+<div>
+<pre>
+  &#x6210;&#x529F;:
+  200 OK
+</pre>
+</div>
+
 <hr>
 <h3 id="post-shutdown-service"><div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white">POST</button> ShutDown Service</div></h3>
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>customers/shutdown_service</b></pre>
 
 <p> &#x95EE;&#x9898;&#x89E3;&#x51B3;&#x540E; &#x5BA2;&#x6237;&#x9009;&#x62E9;&#x5173;&#x95ED;&#x4F1A;&#x8BDD;&#xFF08;&#x6CE8;&#x610F;&#x4E0D;&#x4F1A;&#x4FDD;&#x7559;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF09;</p>
+<h4 id="request">Request</h4>
+<div>
+<pre>
+Headers
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>Authorization</th><td>string</td><td>token</td></tr>
+  </table>
+Form Data Parameters 
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>group_id</th><td>string</td><td>group id</td></tr>
+  </table>
+</pre>
+</div>
+
+<h4 id="response">Response</h4>
+<div>
+<pre>
+  &#x6210;&#x529F;:
+  200 OK
+</pre>
+</div>
+
 <hr>
 <h3 id="post-transfer"><div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white">POST</button> Transfer</div></h3>
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>customers/Transfer</b></pre>
 
 <p>&#x8F6C;&#x63A5;&#x5BA2;&#x670D;</p>
+<h4 id="request">Request</h4>
+<div>
+<pre>
+Headers
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>Authorization</th><td>string</td><td>token</td></tr>
+  </table>
+Form Data Parameters 
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>agent_id</th><td>string</td><td>agent id</td></tr>
+    <tr><th>group_id</th><td>string</td><td>group id</td></tr>
+    <tr><th>department_id</th><td>string</td><td>department id</td></tr>
+  </table>
+</pre>
+</div>
+
+<h4 id="response">Response</h4>
+<div>
+<pre>
+  &#x6210;&#x529F;:
+  200 OK
+  &#x8FD4;&#x56DE;:
+  {
+    &quot;agent_id&quot;: &quot;YxpjNEmJzP2KqphR3&quot;,
+    &quot;base&quot;: &quot;https://chat.esheeps.com&quot;,
+    &quot;config&quot;: {},
+    &quot;customer_name&quot;: &quot;u1.1.1.1.1&quot;,
+    &quot;group_name&quot;: &quot;depart2_u1.1.1.1.1_d2646257-3107-4441-81fd-305101a3bc2e&quot;,
+    &quot;id&quot;: &quot;6FozWugWH3ybRJACx&quot;,
+    &quot;rid&quot;: &quot;2npDFBKwJLuPYen3F&quot;,
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;template&quot;: &quot;&quot;,
+    &quot;timeout&quot;: 200,
+    &quot;token&quot;: &quot;3EDgHbTlrUN4AHDyrSvhIl2-XM0Vg-n6h9zZ34yDWPo&quot;,
+    &quot;user_id&quot;: &quot;9e7eb98f-7f22-40a6-8068-adc4a3b6fef6&quot;,
+    &quot;wait&quot;: 0
+  }
+</pre>
+</div>
+
 <hr>
 <h3 id="post-client-connect"><div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white">POST</button> Client Connect</div></h3>
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>customers/client_connect</b></pre>
+
+<p>&#x5BA2;&#x6237;&#x8FDE;&#x63A5;</p>
+<h4 id="request">Request</h4>
+<div>
+<pre>
+Form Data Parameters 
+  <table>
+    <tr><th>&#x53C2;&#x6570;</th><th>&#x7C7B;&#x578B;</th><th>&#x8BF4;&#x660E;</th></tr>
+    <tr><th>api_key</th><td>string</td><td>api_key</td></tr>
+    <tr><th>group_id</th><td>string</td><td>group id</td></tr>
+    <tr><th>department_id</th><td>string</td><td>department id</td></tr>
+  </table>
+</pre>
+</div>
+
+<h4 id="response">Response</h4>
+<div>
+<pre>
+  &#x6210;&#x529F;:
+  200 OK
+  &#x8FD4;&#x56DE;:
+  {
+    &quot;agent_id&quot;: &quot;gMMDnqdZmHpeAjGXb&quot;,
+    &quot;base&quot;: &quot;https://chat.esheeps.com&quot;,
+    &quot;config&quot;: {},
+    &quot;customer_name&quot;: &quot;u1.1.1.1.2&quot;,
+    &quot;group_name&quot;: &quot;depart1_u1.1.1.1.2_0a17b060-f6ed-43e1-a55f-5c4a6ec1e16b&quot;,
+    &quot;id&quot;: &quot;N27A8jFtniXt5qngz&quot;,
+    &quot;rid&quot;: &quot;GrnBZAv7r2yixD7Wh&quot;,
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;template&quot;: &quot;&quot;,
+    &quot;timeout&quot;: 200,
+    &quot;token&quot;: &quot;KQkPB3YqsKA6toH4mpH-L1QsZmSbTdqrTKU27-gBE3Q&quot;,
+    &quot;user_id&quot;: &quot;62908c52-036f-4a98-967e-dd08fde88050&quot;,
+    &quot;wait&quot;: 0
+  }
+</pre>
+</div>
+
+<hr>
+<style>
+td,th,tr {
+ border-style : hidden!important;
+ text-align:left;
+ }
+</style>
+
 
                                 
                                 </section>
@@ -267,7 +485,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Customer","level":"1.5","depth":1,"previous":{"title":"Agent","level":"1.4","depth":1,"path":"chapter3/README.md","ref":"chapter3/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/README.md","mtime":"2020-10-10T00:55:33.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-10T08:05:20.892Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Customer","level":"1.5","depth":1,"previous":{"title":"Agent","level":"1.4","depth":1,"path":"chapter3/README.md","ref":"chapter3/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/README.md","mtime":"2020-10-10T08:57:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-10T08:58:58.529Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

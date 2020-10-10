@@ -305,7 +305,7 @@ Headers
     <tr><th>参数</th><th>类型</th><th>说明</th></tr>
     <tr><th>Authorization</th><td>string</td><td>管理员登录获取的token</td></tr>
   </table>
-  Query Parameters
+Query Parameters
   <table>
     <tr><th>参数</th><th>类型</th><th>说明</th></tr>
     <tr><th>name</th><td>string</td><td>用户名</td></tr>
