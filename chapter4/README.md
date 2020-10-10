@@ -3,7 +3,7 @@
 
 ---
 
-### <button style="background-color: rgb(56, 132, 255);width:80px;height:30px;border-radius:7px;font-size:15px;color:white" >GET</button> Auth ping
+###<div> <button style="background-color: rgb(56, 132, 255);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white" >GET</button> Auth ping </div>
 
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>customers/auth_ping</b></pre>
 
@@ -11,7 +11,7 @@ verify access_token
 
 ---
 
-### <button style="background-color: rgb(38, 203, 124);width:80px;height:30px;border-radius:7px;font-size:15px;color:white" >POST</button> Connect
+###<div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white" >POST</button> Connect</div>
 
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>customers/connect</b></pre>
 
@@ -19,7 +19,7 @@ verify access_token
 
 ---
 
-### <button style="background-color: rgb(56, 132, 255);width:80px;height:30px;border-radius:7px;font-size:15px;color:white" >GET</button> History Messages
+###<div> <button style="background-color: rgb(56, 132, 255);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white" >GET</button> History Messages </div>
 
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>customers/history_message</b></pre>
 
@@ -29,7 +29,7 @@ verify access_token
 
 ---
 
-### <button style="background-color: rgb(38, 203, 124);width:80px;height:30px;border-radius:7px;font-size:15px;color:white" >POST</button> ShutDown Service
+###<div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white" >POST</button> ShutDown Service</div>
 
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>customers/shutdown_service</b></pre>
 
@@ -37,7 +37,7 @@ verify access_token
 
 ---
 
-### <button style="background-color: rgb(38, 203, 124);width:80px;height:30px;border-radius:7px;font-size:15px;color:white" >POST</button> Transfer
+###<div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white" >POST</button> Transfer</div>
 
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>customers/Transfer</b></pre>
 
@@ -45,5 +45,5 @@ verify access_token
 
 ---
 
-### <button style="background-color: rgb(38, 203, 124);width:80px;height:30px;border-radius:7px;font-size:15px;color:white" >POST</button> Client Connect
+###<div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white" >POST</button> Client Connect</div>
 
