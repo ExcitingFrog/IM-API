@@ -64,6 +64,7 @@ Form Data Parameters
     <tr><th>password</th><td>string</td><td>密码</td></tr>
   </table>
   </pre>
+</pre>
 </div>
 
 #### Response
@@ -85,6 +86,127 @@ Form Data Parameters
 
 <pre><span style="color:grey">https://api.chatsdk.io/</span><b>agents/history_message</b></pre>
 
+#### Request
+
+<div>
+<pre>
+Headers
+  <table>
+    <tr><th>参数</th><th>类型</th><th>说明</th></tr>
+    <tr><th>Authorization</th><td>string</td><td>agent登录获取的token</td></tr>
+  </table>
+Form Data Parameters
+  <table>
+    <tr><th>参数</th><th>类型</th><th>说明</th></tr>
+    <tr><th>user_id</th><td>string</td><td>user id</td></tr>
+    <tr><th>room_id</th><td>string</td><td>room id</td></tr>
+  </table>
+  </pre>
+</pre>
+</div>
+
+#### Response
+
+<div>
+<pre>
+  成功:
+  200 OK
+  返回:
+  {
+    "msgs": {
+        "success": true,
+        "error": "",
+        "status": "",
+        "message": "",
+        "messages": [
+            {
+                "_id": "A2FLWX3wdMTNjEvoy",
+                "rid": "yKybB8DrtECELZBuj",
+                "msg": "bA9EU9A",
+                "ts": "2020-10-11T08:41:26.248Z",
+                "u": {
+                    "_id": "zhQHjWNPErAcxE6sb",
+                    "username": "new1.1.2.7_4f37db62-5598-48bb-b66e-c7725527eec5"
+                },
+                "_updatedAt": "2020-10-11T08:41:26.248Z",
+                "t": "subscription-role-removed"
+            },
+            {
+                "_id": "HdZerW5dpwwQwtGdT",
+                "rid": "yKybB8DrtECELZBuj",
+                "msg": "bA9EU9A",
+                "ts": "2020-10-11T08:41:26.063Z",
+                "u": {
+                    "_id": "zhQHjWNPErAcxE6sb",
+                    "username": "new1.1.2.7_4f37db62-5598-48bb-b66e-c7725527eec5"
+                },
+                "_updatedAt": "2020-10-11T08:41:26.063Z",
+                "t": "subscription-role-added"
+            }
+        ]
+    },
+    "status": "success"
+  }
+</pre>
+
+<pre>
+  失败:
+  400 Bad Request
+  返回:
+  {
+    "error": "get history message fail",
+    "status:": "fail"
+  }
+</pre>
+</div>
+
+---
+
+###<div> <button style="background-color: rgb(56, 132, 255);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white" >GET</button> Query Agents </div>
+
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>agents/agents</b></pre>
+
+#### Request
+
+<div>
+<pre>
+Headers
+  <table>
+    <tr><th>参数</th><th>类型</th><th>说明</th></tr>
+    <tr><th>Authorization</th><td>string</td><td>agent登录获取的token</td></tr>
+  </table>
+</pre>
+</div>
+
+#### Response
+
+<div>
+<pre>
+  成功:
+  200 OK
+  返回:
+  {
+    "agents": {
+        "0": {
+            "RcId": "t6G2mgwK9t456hYtX",
+            "Departments": [
+                "3421274a-51b5-470b-9b80-243de075dac7",
+                "273b22fd-4a16-4c84-a129-5431a61f1aec"
+            ]
+        },
+        "1": {
+            "RcId": "MWb6KCCeqBX6H7Z4L",
+            "Departments": [
+                "3421274a-51b5-470b-9b80-243de075dac7",
+                "273b22fd-4a16-4c84-a129-5431a61f1aec"
+            ]
+        }
+    },
+    "status": "success"
+	}
+</pre>
+</div>
+
 ---
 
 ###<div> <button style="background-color: rgb(56, 132, 255);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white" >GET</button> Query Template </div>
@@ -101,9 +223,9 @@ Headers
   </table>
 Query Parameters 
   <table>
-    <tr><th>参数</th><th>类型</th><th>说明</th></tr>
-    <tr><th>tag</th><td>string</td><td>template tag</td></tr>
-    <tr><th>department_id</th><td>string</td><td>template id</td></tr>
+    <tr><th>参数</th><th>optional</th><th>类型</th><th>说明</th></tr>
+    <tr><th>tag</th><td>optional</td><td>string</td><td>template tag</td></tr>
+    <tr><th>department_id</th><td>optional</td><td>string</td><td>template id</td></tr>
   </table>
 </pre>
 </div>
@@ -182,6 +304,8 @@ Form Data Parameters
 
 ###<div> <button style="background-color: rgb(38, 203, 124);border:0px;width:60px;height:25px;border-radius:10px;font-size:15px;color:white" >POST</button> Post Message</div>
 
+<pre><span style="color:grey">https://api.chatsdk.io/</span><b>agents/post_message</b></pre>
+
 #### Request
 
 <div>
@@ -253,6 +377,7 @@ Form Data Parameters
   <table>
     <tr><th>参数</th><th>类型</th><th>说明</th></tr>
     <tr><th>template_id</th><td>string</td><td>template id</td></tr>
+    <tr><th>rid</th><td>string</td><td>group id</td></tr>
   </table>
 </pre>
 </div>
